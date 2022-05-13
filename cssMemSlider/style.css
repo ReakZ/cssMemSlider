@@ -48,14 +48,14 @@ html {
   color: var(--light-color);
   grid-area: textBlock;
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .textWindow {
   height: 40%;
-  overflow: hidden;
 }
 
 .ctrl {
@@ -115,5 +115,23 @@ html {
 
 #radioButton4:checked ~ .window .slider {
   transform: translateY(-1260px);
+  transition: 0.5s;
+}
+
+#radioButton1:checked ~ .text > .textWindow {
+  transform: translateY(0px);
+  transition: 0.5s;
+}
+
+#radioButton2:checked ~ .text > .textWindow {
+  transform: translateY(-27px);
+  transition: 0.5s;
+}
+#radioButton3:checked ~ .text > .textWindow {
+  transform: translateY(-52px);
+  transition: 0.5s;
+}
+#radioButton4:checked ~ .text > .textWindow {
+  transform: translateY(-74px);
   transition: 0.5s;
 }
