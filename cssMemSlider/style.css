@@ -17,7 +17,7 @@ html {
   margin: 5rem auto;
   height: 75rem;
   display: grid;
-  grid-template-rows: 70% 10% 10% 10%;
+  grid-template-rows: 75% 8% 10% 8%;
   grid-template-columns: repeat(20, 5%);
   grid-template-areas:
     'wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind'
@@ -129,7 +129,7 @@ html {
 }
 
 #radioButton1:checked ~ .text > .textWindow {
-  transform: translateY(0px);
+  transform: translateY(0);
   transition: 0.5s;
 }
 
@@ -224,7 +224,7 @@ html {
   }
 
   #radioButton1:checked ~ .text > .textWindow {
-    transform: translateY(0px);
+    transform: translateY(0);
     transition: 0.5s;
   }
 
