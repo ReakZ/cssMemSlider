@@ -3,6 +3,7 @@
   --dark-color: black;
   --light-color: white;
   --border-color: blue;
+  --active-element-color: gold;
 }
 body {
   background-color: var(--background-color);
@@ -178,6 +179,12 @@ html {
 
 .customBtn:hover > .border > .point {
   background-color: var(--light-color);
+}
+.customBtn:active > .border {
+  background-color: var(--active-element-color);
+}
+.customBtn:active > .border > .point {
+  background-color: var(--active-element-color);
 }
 .point {
   width: 2rem;
