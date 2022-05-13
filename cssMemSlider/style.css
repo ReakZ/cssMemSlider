@@ -1,0 +1,79 @@
+
+:root{
+  --background-color:gray;
+  --dark-color:black;
+  --light-color:white;
+}
+body {
+  background-color: var(--background-color);
+}
+html{
+  font-size: 62.5%;
+}
+.wrapper {
+  width: 90rem;
+  margin: 10rem auto;
+  height: 60rem;
+  gap: 10%;
+  display: grid;
+  grid-template-rows: 70% 20%;
+  grid-template-columns: 70% 20%;
+  grid-template-areas:
+    'wind wind'
+    'textBlock ctrl ';
+  background-color:  var(--dark-color);
+}
+
+.text {
+  font-size: 2rem;
+  color: var(--light-color);
+  grid-area: textBlock;
+  width: 100%;
+  height: 100%;
+}
+
+.textWindow {
+  height: 20%;
+  width: 30%;
+  overflow: hidden;
+}
+
+.ctrl {
+  grid-area: ctrl;
+  justify-self: end;
+}
+
+.window {
+  grid-area: wind;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+}
+
+.slide1,
+.slide2,
+.slide3,
+.slide4 {
+  width: 100%;
+  height: 100%;
+}
+
+.slide1 {
+  background-image: url(./assets/img/meme_1.jpg);
+}
+
+.slide2 {
+  background-image: url(./assets/img/meme_2.jpg);
+}
+
+.slide3 {
+  background-image: url(./assets/img/meme_3.jpg);
+}
+
+.slide4 {
+  background-image: url(./assets/img/meme_4.jpg);
+}
