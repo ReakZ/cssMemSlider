@@ -1,40 +1,60 @@
-
-:root{
-  --background-color:gray;
-  --dark-color:black;
-  --light-color:white;
+:root {
+  --background-color: gray;
+  --dark-color: black;
+  --light-color: white;
 }
 body {
   background-color: var(--background-color);
 }
-html{
+html {
   font-size: 62.5%;
 }
 .wrapper {
   width: 90rem;
   margin: 10rem auto;
   height: 60rem;
-  gap: 10%;
   display: grid;
-  grid-template-rows: 70% 20%;
-  grid-template-columns: 70% 20%;
+  grid-template-rows: 70% 10% 10% 10%;
+  grid-template-columns: repeat(20, 5%);
   grid-template-areas:
-    'wind wind'
-    'textBlock ctrl ';
-  background-color:  var(--dark-color);
+    'wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind'
+    '. . . . . . . . . . . . . . . . . . . .'
+    'textBlock textBlock textBlock . . . . . . . . . . . . .ctrl1 ctrl2 ctrl3 ctrl4'
+    '. . . . . . . . . . . . . . . . . . . .';
+  background-color: var(--dark-color);
 }
-
+#radioButton1 {
+  grid-area: ctrl1;
+  align-self: center;
+  justify-self: end;
+}
+#radioButton2 {
+  grid-area: ctrl2;
+  align-self: center;
+  justify-self: end;
+}
+#radioButton3 {
+  grid-area: ctrl3;
+  align-self: center;
+  justify-self: end;
+}
+#radioButton4 {
+  grid-area: ctrl4;
+  align-self: center;
+  justify-self: end;
+}
 .text {
   font-size: 2rem;
   color: var(--light-color);
   grid-area: textBlock;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .textWindow {
-  height: 20%;
-  width: 30%;
+  height: 40%;
   overflow: hidden;
 }
 
@@ -76,4 +96,24 @@ html{
 
 .slide4 {
   background-image: url(./assets/img/meme_4.jpg);
+}
+
+#radioButton1:checked ~ .window .slider {
+  transform: translateY(-0px);
+  transition: 0.5s;
+}
+
+#radioButton2:checked ~ .window .slider {
+  transform: translateY(-420px);
+  transition: 0.5s;
+}
+
+#radioButton3:checked ~ .window .slider {
+  transform: translateY(-840px);
+  transition: 0.5s;
+}
+
+#radioButton4:checked ~ .window .slider {
+  transform: translateY(-1260px);
+  transition: 0.5s;
 }
