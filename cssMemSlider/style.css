@@ -1,0 +1,243 @@
+:root {
+  --background-color: rgb(66, 66, 66);
+  --light-color: white;
+  --border-color: rgb(69, 212, 248);
+  --active-element-color: gold;
+}
+body {
+  background-color: var(--background-color);
+}
+html {
+  font-size: 62.5%;
+}
+.wrapper {
+  min-width: 90rem;
+  max-width: 130rem;
+  width: 60%;
+  margin: 5rem auto;
+  height: 75rem;
+  display: grid;
+  grid-template-rows: 75% 8% 10% 8%;
+  grid-template-columns: repeat(20, 5%);
+  grid-template-areas:
+    'wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind'
+    '. . . . . . . . . . . . . . . . . . . .'
+    'textBlock textBlock textBlock textBlock . . . . . . . . . . . .ctrl1 ctrl2 ctrl3 ctrl4'
+    '. . . . . . . . . . . . . . . . . . . .';
+  background-color: var(--background-color);
+}
+#radioButton1 {
+  grid-area: ctrl1;
+  align-self: center;
+  justify-self: end;
+}
+#radioButton2 {
+  grid-area: ctrl2;
+  align-self: center;
+  justify-self: end;
+}
+#radioButton3 {
+  grid-area: ctrl3;
+  align-self: center;
+  justify-self: end;
+}
+#radioButton4 {
+  grid-area: ctrl4;
+  align-self: center;
+  justify-self: end;
+}
+.text {
+  font-size: 2rem;
+  color: var(--light-color);
+  grid-area: textBlock;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  align-self: center;
+}
+
+.textWindow {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 120%;
+}
+
+.ctrl {
+  grid-area: ctrl;
+  justify-self: end;
+}
+
+.window {
+  grid-area: wind;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+}
+
+.slide1,
+.slide2,
+.slide3,
+.slide4 {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.slide1 {
+  background-image: url(./assets/img/meme_1.jpg);
+}
+
+.slide2 {
+  background-image: url(./assets/img/meme_2.jpg);
+}
+
+.slide3 {
+  background-image: url(./assets/img/meme_3.jpg);
+}
+
+.slide4 {
+  background-image: url(./assets/img/meme_4.jpg);
+}
+
+#radioButton1:checked ~ .window .slider {
+  transform: translateY(-0%);
+  transition: 0.5s;
+}
+
+#radioButton2:checked ~ .window .slider {
+  transform: translateY(-100%);
+  transition: 0.5s;
+}
+
+#radioButton3:checked ~ .window .slider {
+  transform: translateY(-200%);
+  transition: 0.5s;
+}
+
+#radioButton4:checked ~ .window .slider {
+  transform: translateY(-300%);
+  transition: 0.5s;
+}
+
+#radioButton1:checked ~ .text > .textWindow {
+  transform: translateY(0);
+  transition: 0.5s;
+}
+
+#radioButton2:checked ~ .text > .textWindow {
+  transform: translateY(-300%);
+  transition: 0.5s;
+}
+#radioButton3:checked ~ .text > .textWindow {
+  transform: translateY(-600%);
+  transition: 0.5s;
+}
+#radioButton4:checked ~ .text > .textWindow {
+  transform: translateY(-900%);
+  transition: 0.5s;
+}
+
+.oldBtn {
+  display: none;
+}
+.customBtn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  align-self: center;
+  justify-self: center;
+}
+#cBtn1 {
+  grid-area: ctrl1;
+}
+#cBtn2 {
+  grid-area: ctrl2;
+}
+#cBtn3 {
+  grid-area: ctrl3;
+}
+#cBtn4 {
+  grid-area: ctrl4;
+}
+.border {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--border-color);
+}
+
+.customBtn:hover > .border {
+  background-color: var(--light-color);
+}
+
+.customBtn:hover > .border > .point {
+  background-color: var(--light-color);
+}
+.customBtn:active > .border {
+  background-color: var(--active-element-color);
+}
+.customBtn:active > .border > .point {
+  background-color: var(--active-element-color);
+}
+.point {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--border-color);
+}
+
+.oldBtn:checked + .customBtn .point {
+  background-color: var(--background-color);
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    min-width: 32rem;
+    max-width: 60rem;
+    width: 80%;
+    grid-template-rows: 60% 5% 10% 5% 20%;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-areas:
+      'wind wind wind wind wind wind wind wind wind wind'
+      '. . . . . . . . . .'
+      '. . . ctrl1 ctrl2 ctrl3 ctrl4 . . .'
+      '. . . . . . . . . .'
+      'textBlock textBlock textBlock textBlock textBlock textBlock textBlock textBlock textBlock textBlock';
+  }
+
+  #radioButton1:checked ~ .text > .textWindow {
+    transform: translateY(0);
+    transition: 0.5s;
+  }
+
+  #radioButton2:checked ~ .text > .textWindow {
+    transform: translateY(-155%);
+    transition: 0.5s;
+  }
+  #radioButton3:checked ~ .text > .textWindow {
+    transform: translateY(-340%);
+    transition: 0.5s;
+  }
+  #radioButton4:checked ~ .text > .textWindow {
+    transform: translateY(-600%);
+    transition: 0.5s;
+  }
+}
