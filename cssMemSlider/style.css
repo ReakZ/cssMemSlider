@@ -2,6 +2,7 @@
   --background-color: gray;
   --dark-color: black;
   --light-color: white;
+  --border-color: blue;
 }
 body {
   background-color: var(--background-color);
@@ -134,4 +135,60 @@ html {
 #radioButton4:checked ~ .text > .textWindow {
   transform: translateY(-74px);
   transition: 0.5s;
+}
+
+.oldBtn {
+  display: none;
+}
+.customBtn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  align-self: center;
+  justify-self: center;
+}
+#cBtn1 {
+  grid-area: ctrl1;
+}
+#cBtn2 {
+  grid-area: ctrl2;
+}
+#cBtn3 {
+  grid-area: ctrl3;
+}
+#cBtn4 {
+  grid-area: ctrl4;
+}
+.border {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--border-color);
+}
+
+.customBtn:hover > .border {
+  background-color: var(--light-color);
+}
+
+.customBtn:hover > .border > .point {
+  background-color: var(--light-color);
+}
+.point {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--border-color);
+}
+
+.oldBtn:checked + .customBtn .point {
+  background-color: var(--dark-color);
 }
