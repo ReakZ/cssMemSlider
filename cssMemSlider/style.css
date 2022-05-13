@@ -14,15 +14,15 @@ html {
   min-width: 90rem;
   max-width: 130rem;
   width: 60%;
-  margin: 10rem auto;
-  height: 60rem;
+  margin: 5rem auto;
+  height: 75rem;
   display: grid;
   grid-template-rows: 70% 10% 10% 10%;
   grid-template-columns: repeat(20, 5%);
   grid-template-areas:
     'wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind wind'
     '. . . . . . . . . . . . . . . . . . . .'
-    'textBlock textBlock textBlock . . . . . . . . . . . . .ctrl1 ctrl2 ctrl3 ctrl4'
+    'textBlock textBlock textBlock textBlock . . . . . . . . . . . .ctrl1 ctrl2 ctrl3 ctrl4'
     '. . . . . . . . . . . . . . . . . . . .';
   background-color: var(--background-color);
 }
@@ -55,13 +55,14 @@ html {
   display: flex;
   align-items: center;
   overflow: hidden;
+  align-self: center;
 }
 
 .textWindow {
   height: 40%;
   display: flex;
   flex-direction: column;
-  gap: 100%;
+  gap: 120%;
 }
 
 .ctrl {
@@ -86,6 +87,9 @@ html {
 .slide4 {
   width: 100%;
   height: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .slide1 {
@@ -209,7 +213,7 @@ html {
     min-width: 32rem;
     max-width: 60rem;
     width: 80%;
-    grid-template-rows: 50% 10% 10% 10% 20%;
+    grid-template-rows: 60% 5% 10% 5% 20%;
     grid-template-columns: repeat(10, 10%);
     grid-template-areas:
       'wind wind wind wind wind wind wind wind wind wind'
@@ -219,18 +223,17 @@ html {
       'textBlock textBlock textBlock textBlock textBlock textBlock textBlock textBlock textBlock textBlock';
   }
 
-
   #radioButton1:checked ~ .text > .textWindow {
     transform: translateY(0px);
     transition: 0.5s;
   }
 
   #radioButton2:checked ~ .text > .textWindow {
-    transform: translateY(-200%);
+    transform: translateY(-155%);
     transition: 0.5s;
   }
   #radioButton3:checked ~ .text > .textWindow {
-    transform: translateY(-400%);
+    transform: translateY(-340%);
     transition: 0.5s;
   }
   #radioButton4:checked ~ .text > .textWindow {
