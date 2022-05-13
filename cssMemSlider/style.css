@@ -1,8 +1,7 @@
 :root {
-  --background-color: gray;
-  --dark-color: black;
+  --background-color: rgb(66, 66, 66);
   --light-color: white;
-  --border-color: blue;
+  --border-color: rgb(69, 212, 248);
   --active-element-color: gold;
 }
 body {
@@ -12,7 +11,9 @@ html {
   font-size: 62.5%;
 }
 .wrapper {
-  width: 90rem;
+  min-width: 90rem;
+  max-width: 130rem;
+  width: 60%;
   margin: 10rem auto;
   height: 60rem;
   display: grid;
@@ -23,7 +24,7 @@ html {
     '. . . . . . . . . . . . . . . . . . . .'
     'textBlock textBlock textBlock . . . . . . . . . . . . .ctrl1 ctrl2 ctrl3 ctrl4'
     '. . . . . . . . . . . . . . . . . . . .';
-  background-color: var(--dark-color);
+  background-color: var(--background-color);
 }
 #radioButton1 {
   grid-area: ctrl1;
@@ -58,6 +59,9 @@ html {
 
 .textWindow {
   height: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 100%;
 }
 
 .ctrl {
@@ -101,22 +105,22 @@ html {
 }
 
 #radioButton1:checked ~ .window .slider {
-  transform: translateY(-0px);
+  transform: translateY(-0%);
   transition: 0.5s;
 }
 
 #radioButton2:checked ~ .window .slider {
-  transform: translateY(-420px);
+  transform: translateY(-100%);
   transition: 0.5s;
 }
 
 #radioButton3:checked ~ .window .slider {
-  transform: translateY(-840px);
+  transform: translateY(-200%);
   transition: 0.5s;
 }
 
 #radioButton4:checked ~ .window .slider {
-  transform: translateY(-1260px);
+  transform: translateY(-300%);
   transition: 0.5s;
 }
 
@@ -126,15 +130,15 @@ html {
 }
 
 #radioButton2:checked ~ .text > .textWindow {
-  transform: translateY(-27px);
+  transform: translateY(-300%);
   transition: 0.5s;
 }
 #radioButton3:checked ~ .text > .textWindow {
-  transform: translateY(-52px);
+  transform: translateY(-600%);
   transition: 0.5s;
 }
 #radioButton4:checked ~ .text > .textWindow {
-  transform: translateY(-74px);
+  transform: translateY(-900%);
   transition: 0.5s;
 }
 
@@ -197,5 +201,40 @@ html {
 }
 
 .oldBtn:checked + .customBtn .point {
-  background-color: var(--dark-color);
+  background-color: var(--background-color);
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    min-width: 32rem;
+    max-width: 60rem;
+    width: 80%;
+    grid-template-rows: 50% 10% 10% 10% 20%;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-areas:
+      'wind wind wind wind wind wind wind wind wind wind'
+      '. . . . . . . . . .'
+      '. . . ctrl1 ctrl2 ctrl3 ctrl4 . . .'
+      '. . . . . . . . . .'
+      'textBlock textBlock textBlock textBlock textBlock textBlock textBlock textBlock textBlock textBlock';
+  }
+
+
+  #radioButton1:checked ~ .text > .textWindow {
+    transform: translateY(0px);
+    transition: 0.5s;
+  }
+
+  #radioButton2:checked ~ .text > .textWindow {
+    transform: translateY(-200%);
+    transition: 0.5s;
+  }
+  #radioButton3:checked ~ .text > .textWindow {
+    transform: translateY(-400%);
+    transition: 0.5s;
+  }
+  #radioButton4:checked ~ .text > .textWindow {
+    transform: translateY(-600%);
+    transition: 0.5s;
+  }
 }
